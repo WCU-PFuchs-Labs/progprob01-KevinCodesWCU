@@ -23,15 +23,30 @@ public class homework20_1 {
     ListNode fourth = new ListNode(7);
     ListNode fifth = new ListNode(8);
 
+    ListNode one = new ListNode(1);
+    ListNode two = new ListNode(1);
+    ListNode three = new ListNode(1);
+    ListNode four = new ListNode(1);
+    ListNode five = new ListNode(2);
+
     first.next = second;
     second.next = third;
     third.next = fourth;
     fourth.next = fifth;
 
-    LinkedList sample = new LinkedList();
-    sample.head = first;
-    deleteDuplicates(sample);
+    one.next = two;
+    two.next = three;
+    three.next = four;
+    four.next = five;
 
+    LinkedList sample = new LinkedList();
+    LinkedList sample2 = new LinkedList();
+
+    sample.head = first;
+    sample2.head = one;
+
+    deleteDuplicates(sample);
+    deleteDuplicates(sample2);
   }
 
   public static void deleteDuplicates(LinkedList llist) {
