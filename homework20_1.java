@@ -17,6 +17,20 @@ Please complete the following program to fullfil the function.
 */
 public class homework20_1 {
   public static void main(String[] args) {
+    ListNode first = new ListNode(1);
+    ListNode second = new ListNode(2);
+    ListNode third = new ListNode(2);
+    ListNode fourth = new ListNode(7);
+    ListNode fifth = new ListNode(8);
+
+    first.next = second;
+    second.next = third;
+    third.next = fourth;
+    fourth.next = fifth;
+
+    LinkedList sample = new LinkedList();
+    sample.head = first;
+    deleteDuplicates(sample);
 
   }
 
