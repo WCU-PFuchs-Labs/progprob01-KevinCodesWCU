@@ -15,39 +15,62 @@ output: head-->1-->2-->3-->null
 
 Please complete the following program to fullfil the function.
 */
-public class homework20_1
-{
-   public static void main(String[] args)
-   {
-      //add your code here
-   
-   }
-   public static void deleteDuplicates(LinkedList llist)
-   {
-      //add your code here
-   }
+public class homework20_1 {
+  public static void main(String[] args) {
+    ListNode first = new ListNode(1);
+    ListNode second = new ListNode(2);
+    ListNode third = new ListNode(3);
+    ListNode fourth = new ListNode(3);
+    ListNode fifth = new ListNode(5);
 
-}
+    first.next = second;
+    second.next = third;
+    third.next = fourth;
+    fourth.next = fifth;
 
-class ListNode
-{
-   int value;
-   ListNode next;
-   ListNode(int v){value = v;}
-}
+    LinkedList sample = new LinkedList();
+    sample.head = first;
+    deleteDuplicates(sample);
 
-class LinkedList
-{
-   ListNode head;
-   public String toString()
-   {
-      String nodeData = "";
-      ListNode ref = head;
-      while(ref != null)
-      {
-         nodeData += ref.value + "-->";
-         ref = ref.next;
+  }
+
+  public static void deleteDuplicates(LinkedList llist) {
+
+    ListNode current = llist.head;
+
+    while (current != null && current.next != null) {
+      if (current.value == current.next.value) {
+        current.next = current.next.next;
+      } else {
+        current = current.next;
       }
-      return "head-->"+nodeData+"null";
-   }
+
+    }
+
+    System.out.println(llist);
+  }
+
+}
+
+class ListNode {
+  int value;
+  ListNode next;
+
+  ListNode(int v) {
+    value = v;
+  }
+}
+
+class LinkedList {
+  ListNode head;
+
+  public String toString() {
+    String nodeData = "";
+    ListNode ref = head;
+    while (ref != null) {
+      nodeData += ref.value + "-->";
+      ref = ref.next;
+    }
+    return "head-->" + nodeData + "null";
+  }
 }
